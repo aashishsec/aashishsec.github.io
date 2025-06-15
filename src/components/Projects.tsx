@@ -1,31 +1,70 @@
-import { useState } from 'react';
+
 import { Github } from 'lucide-react';
 
 const projects = [
   {
-    title: "JSScanner",
-    description: "A Python/Selenium-based tool designed to crawl websites and identify potentially sensitive files (e.g., .js, .json, .env) exposed publicly.",
-    tech: ["Python", "Selenium", "Regex"],
-    link: "https://github.com/aashishsec",
-    demoOutput: "// Simulated output...\n> Analyzing target.com\n> Found sensitive file: /api/config.json\n> Found sensitive file: /.env.local\nVulnerabilities found: 2"
+    title: "GhostRecon",
+    description: "A passive reconnaissance tool for discovering domains and subdomains for a target.",
+    tech: ["Reconnaissance", "Domain Discovery"],
+    link: "https://github.com/aashishsec/GhostRecon",
   },
   {
-    title: "Flow Shop Scheduling",
-    description: "An optimization project applying metaheuristic algorithms to solve the complex Flow Shop Scheduling problem, improving production efficiency.",
-    tech: ["Python", "Artificial Bee Colony", "Roach Infestation Algorithm"],
-    link: "https://github.com/aashishsec",
+    title: "My-dorks",
+    description: "Generates Google, Shodan, and GitHub dorks for bug bounty hunting.",
+    tech: ["Google Dorks", "Shodan", "GitHub"],
+    link: "https://aashishsec.github.io/docks/",
   },
   {
-    title: "OSINT Lab",
-    description: "Developed automated data gathering and analysis pipelines for Open-Source Intelligence (OSINT) operations, streamlining the reconnaissance process.",
-    tech: ["Python", "Scrapy", "APIs"],
-    link: "https://github.com/aashishsec",
-  }
+    title: "HttpAlive",
+    description: "A web probing tool to discover alive subdomains and URLs with concurrency options.",
+    tech: ["Web Probing", "Subdomain Discovery"],
+    link: "https://aashishsec.github.io/httpAlive/",
+  },
+  {
+    title: "HackHive",
+    description: "A Docker environment for bug bounties, pre-loaded with essential tools.",
+    tech: ["Docker", "Bug Bounty", "Tooling"],
+    link: "https://aashishsec.github.io/HackHive/",
+  },
+  {
+    title: "BBTools Installer",
+    description: "A simple installer script for various bug bounty tools to set up your environment quickly.",
+    tech: ["Shell Scripting", "Automation"],
+    link: "https://aashishsec.github.io/BBTools/",
+  },
+  {
+    title: "SubDominator",
+    description: "Efficiently discover subdomains for a target domain with minimal impact.",
+    tech: ["Subdomain Discovery", "Bug Bounty"],
+    link: "https://github.com/aashishsec/Subdominator",
+  },
+  {
+    title: "pyWebCrawler",
+    description: "A Python-based web crawler to extract URLs, subdomains, and JavaScript files.",
+    tech: ["Python", "Web Crawling", "URL Extraction"],
+    link: "https://aashishsec.github.io/pyWebCrawler/",
+  },
+  {
+    title: "subBruter",
+    description: "A tool to efficiently probe for alive subdomains from a provided wordlist.",
+    tech: ["Subdomain Brute-forcing", "Go"],
+    link: "https://aashishsec.github.io/subBruter/",
+  },
+  {
+    title: "portProbe",
+    description: "A tool to efficiently probe for open ports on IP addresses and subdomains.",
+    tech: ["Port Scanning", "Networking", "Go"],
+    link: "https://aashishsec.github.io/portProbe/",
+  },
+  {
+    title: "DirBrute",
+    description: "A tool to efficiently probe for alive endpoints from a provided wordlist.",
+    tech: ["Directory Brute-forcing", "Go"],
+    link: "https://aashishsec.github.io/dirBrute/",
+  },
 ];
 
 const ProjectCard = ({ project }) => {
-  const [showDemo, setShowDemo] = useState(false);
-
   return (
     <div className="border p-6 rounded-lg group hover:border-primary transition-all duration-300 flex flex-col">
       <h4 className="text-xl font-bold text-primary group-hover:animate-glitch">{project.title}</h4>
@@ -39,20 +78,9 @@ const ProjectCard = ({ project }) => {
 
       <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
         <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:underline">
-          View on GitHub <Github className="h-4 w-4" />
+          View Project <Github className="h-4 w-4" />
         </a>
-        {project.demoOutput && (
-          <button onClick={() => setShowDemo(!showDemo)} className="text-sm text-primary hover:underline">
-            {showDemo ? 'Hide Demo' : 'View Demo'}
-          </button>
-        )}
       </div>
-
-      {showDemo && (
-        <pre className="bg-black/50 p-4 rounded-md mt-4 text-sm text-green-300 whitespace-pre-wrap">
-          <code>{project.demoOutput}</code>
-        </pre>
-      )}
     </div>
   );
 };
