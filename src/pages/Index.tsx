@@ -8,6 +8,7 @@ import Experience from '@/components/Experience';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { AnimatedSection } from '@/components/AnimatedSection';
 
 const Index = () => {
   return (
@@ -15,12 +16,24 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Testimonials />
-        <Contact />
+        <AnimatedSection>
+          <About />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Skills />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Projects />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Experience />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Testimonials />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Contact />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>

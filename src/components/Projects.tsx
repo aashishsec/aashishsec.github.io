@@ -1,66 +1,74 @@
 
-import { Github } from 'lucide-react';
+import { Github, Globe } from 'lucide-react';
 
 const projects = [
   {
     title: "GhostRecon",
     description: "A passive reconnaissance tool for discovering domains and subdomains for a target.",
     tech: ["Reconnaissance", "Domain Discovery"],
-    link: "https://github.com/aashishsec/GhostRecon",
+    repoUrl: "https://github.com/aashishsec/GhostRecon",
   },
   {
     title: "My-dorks",
     description: "Generates Google, Shodan, and GitHub dorks for bug bounty hunting.",
     tech: ["Google Dorks", "Shodan", "GitHub"],
-    link: "https://aashishsec.github.io/docks/",
+    liveUrl: "https://aashishsec.github.io/docks/",
+    repoUrl: "https://github.com/aashishsec/docks",
   },
   {
     title: "HttpAlive",
     description: "A web probing tool to discover alive subdomains and URLs with concurrency options.",
     tech: ["Web Probing", "Subdomain Discovery"],
-    link: "https://aashishsec.github.io/httpAlive/",
+    liveUrl: "https://aashishsec.github.io/httpAlive/",
+    repoUrl: "https://github.com/aashishsec/httpAlive",
   },
   {
     title: "HackHive",
     description: "A Docker environment for bug bounties, pre-loaded with essential tools.",
     tech: ["Docker", "Bug Bounty", "Tooling"],
-    link: "https://aashishsec.github.io/HackHive/",
+    liveUrl: "https://aashishsec.github.io/HackHive/",
+    repoUrl: "https://github.com/aashishsec/HackHive",
   },
   {
     title: "BBTools Installer",
     description: "A simple installer script for various bug bounty tools to set up your environment quickly.",
     tech: ["Shell Scripting", "Automation"],
-    link: "https://aashishsec.github.io/BBTools/",
+    liveUrl: "https://aashishsec.github.io/BBTools/",
+    repoUrl: "https://github.com/aashishsec/BBTools",
   },
   {
     title: "SubDominator",
     description: "Efficiently discover subdomains for a target domain with minimal impact.",
     tech: ["Subdomain Discovery", "Bug Bounty"],
-    link: "https://github.com/aashishsec/Subdominator",
+    repoUrl: "https://github.com/aashishsec/Subdominator",
   },
   {
     title: "pyWebCrawler",
     description: "A Python-based web crawler to extract URLs, subdomains, and JavaScript files.",
     tech: ["Python", "Web Crawling", "URL Extraction"],
-    link: "https://aashishsec.github.io/pyWebCrawler/",
+    liveUrl: "https://aashishsec.github.io/pyWebCrawler/",
+    repoUrl: "https://github.com/aashishsec/pyWebCrawler",
   },
   {
     title: "subBruter",
     description: "A tool to efficiently probe for alive subdomains from a provided wordlist.",
     tech: ["Subdomain Brute-forcing", "Go"],
-    link: "https://aashishsec.github.io/subBruter/",
+    liveUrl: "https://aashishsec.github.io/subBruter/",
+    repoUrl: "https://github.com/aashishsec/subBruter",
   },
   {
     title: "portProbe",
     description: "A tool to efficiently probe for open ports on IP addresses and subdomains.",
     tech: ["Port Scanning", "Networking", "Go"],
-    link: "https://aashishsec.github.io/portProbe/",
+    liveUrl: "https://aashishsec.github.io/portProbe/",
+    repoUrl: "https://github.com/aashishsec/portProbe",
   },
   {
     title: "DirBrute",
     description: "A tool to efficiently probe for alive endpoints from a provided wordlist.",
     tech: ["Directory Brute-forcing", "Go"],
-    link: "https://aashishsec.github.io/dirBrute/",
+    liveUrl: "https://aashishsec.github.io/dirBrute/",
+    repoUrl: "https://github.com/aashishsec/dirBrute",
   },
 ];
 
@@ -76,10 +84,17 @@ const ProjectCard = ({ project }) => {
         ))}
       </div>
 
-      <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
-        <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:underline">
-          View Project <Github className="h-4 w-4" />
-        </a>
+      <div className="flex items-center justify-start gap-4 mt-auto pt-4 border-t border-border">
+        {project.liveUrl && (
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:underline">
+            Live Demo <Globe className="h-4 w-4" />
+          </a>
+        )}
+        {project.repoUrl && (
+          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:underline">
+            View Code <Github className="h-4 w-4" />
+          </a>
+        )}
       </div>
     </div>
   );
