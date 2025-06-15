@@ -1,8 +1,7 @@
 
-import { Mail, Linkedin, MapPin } from 'lucide-react';
+import { Linkedin, MapPin } from 'lucide-react';
 
 const contactInfo = [
-  { icon: Mail, text: "priyathambande1729@gmail.com", href: "mailto:priyathambande1729@gmail.com" },
   { icon: Linkedin, text: "linkedin.com/in/aashishsec", href: "https://www.linkedin.com/in/aashishsec", target: "_blank" },
   { icon: MapPin, text: "Hyderabad, Telangana, India" },
 ];
