@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Github } from 'lucide-react';
 
@@ -7,20 +6,20 @@ const projects = [
     title: "JSScanner",
     description: "A Python/Selenium-based tool designed to crawl websites and identify potentially sensitive files (e.g., .js, .json, .env) exposed publicly.",
     tech: ["Python", "Selenium", "Regex"],
-    link: "#",
+    link: "https://github.com/aashishsec",
     demoOutput: "// Simulated output...\n> Analyzing target.com\n> Found sensitive file: /api/config.json\n> Found sensitive file: /.env.local\nVulnerabilities found: 2"
   },
   {
     title: "Flow Shop Scheduling",
     description: "An optimization project applying metaheuristic algorithms to solve the complex Flow Shop Scheduling problem, improving production efficiency.",
     tech: ["Python", "Artificial Bee Colony", "Roach Infestation Algorithm"],
-    link: "#",
+    link: "https://github.com/aashishsec",
   },
   {
     title: "OSINT Lab",
     description: "Developed automated data gathering and analysis pipelines for Open-Source Intelligence (OSINT) operations, streamlining the reconnaissance process.",
     tech: ["Python", "Scrapy", "APIs"],
-    link: "#",
+    link: "https://github.com/aashishsec",
   }
 ];
 

@@ -1,6 +1,6 @@
 
 import { useTypewriter } from '@/hooks/useTypewriter';
-import { Download, Linkedin } from 'lucide-react';
+import { Download, Linkedin, Github, FileText, Briefcase } from 'lucide-react';
 
 const Hero = () => {
   const title = useTypewriter("Hello, I’m Aashish Bande", 50);
@@ -15,12 +15,21 @@ const Hero = () => {
         Security Analyst | Tech Alchemist | Cybersecurity Explorer
       </h2>
       <p className="mt-6 text-lg text-muted-foreground italic">“Transforming Challenges into Solutions”</p>
-      <div className="mt-8 flex flex-col sm:flex-row gap-4">
+      <div className="mt-8 flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
         <a href="/Aashish_Bande_Resume.pdf" download="Aashish_Bande_Resume.pdf" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary text-primary font-bold rounded-md hover:bg-primary hover:text-primary-foreground transition-all group">
           Download Resume <Download className="h-5 w-5 group-hover:animate-glitch" />
         </a>
         <a href="https://www.linkedin.com/in/aashishsec" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-muted-foreground text-muted-foreground font-bold rounded-md hover:border-primary hover:text-primary transition-all group">
           LinkedIn <Linkedin className="h-5 w-5 group-hover:animate-glitch" />
+        </a>
+        <a href="https://github.com/aashishsec" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-muted-foreground text-muted-foreground font-bold rounded-md hover:border-primary hover:text-primary transition-all group">
+          GitHub <Github className="h-5 w-5 group-hover:animate-glitch" />
+        </a>
+        <a href="https://aashishsec.medium.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-muted-foreground text-muted-foreground font-bold rounded-md hover:border-primary hover:text-primary transition-all group">
+          Medium <FileText className="h-5 w-5 group-hover:animate-glitch" />
+        </a>
+        <a href="https://www.aashishsec.in/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-muted-foreground text-muted-foreground font-bold rounded-md hover:border-primary hover:text-primary transition-all group">
+          Services <Briefcase className="h-5 w-5 group-hover:animate-glitch" />
         </a>
       </div>
     </section>

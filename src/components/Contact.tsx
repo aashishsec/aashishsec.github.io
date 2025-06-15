@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Linkedin, MapPin, Send } from 'lucide-react';
+import { Linkedin, MapPin, Send, Github, FileText } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -8,6 +7,8 @@ import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
   { icon: Linkedin, text: "linkedin.com/in/aashishsec", href: "https://www.linkedin.com/in/aashishsec", target: "_blank" },
+  { icon: Github, text: "github.com/aashishsec", href: "https://github.com/aashishsec", target: "_blank" },
+  { icon: FileText, text: "aashishsec.medium.com", href: "https://aashishsec.medium.com/", target: "_blank" },
   { icon: MapPin, text: "Hyderabad, Telangana, India" },
 ];
 
