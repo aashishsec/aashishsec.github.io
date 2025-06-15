@@ -16,7 +16,7 @@ const Hero = () => {
       </h2>
       <p className="mt-6 text-lg text-muted-foreground italic">“Transforming Challenges into Solutions”</p>
       <div className="mt-8 flex flex-col sm:flex-row gap-4">
-        <a href="#" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary text-primary font-bold rounded-md hover:bg-primary hover:text-primary-foreground transition-all group">
+        <a href="/Aashish_Bande_Resume.pdf" download="Aashish_Bande_Resume.pdf" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary text-primary font-bold rounded-md hover:bg-primary hover:text-primary-foreground transition-all group">
           Download Resume <Download className="h-5 w-5 group-hover:animate-glitch" />
         </a>
         <a href="https://www.linkedin.com/in/aashishsec" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-muted-foreground text-muted-foreground font-bold rounded-md hover:border-primary hover:text-primary transition-all group">
