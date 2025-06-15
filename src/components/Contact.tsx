@@ -1,9 +1,20 @@
+
 import { useState } from 'react';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 import { Linkedin, MapPin, Send, Github, FileText } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 
 const contactInfo = [
   { icon: Linkedin, text: "linkedin.com/in/aashishsec", href: "https://www.linkedin.com/in/aashishsec", target: "_blank" },
@@ -12,24 +23,58 @@ const contactInfo = [
   { icon: MapPin, text: "Hyderabad, Telangana, India" },
 ];
 
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
 const Contact = () => {
   const { toast } = useToast();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // This is a dummy handler. In a real app, you would integrate an email service.
-    console.log({ name, email, message });
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    setName('');
-    setEmail('');
-    setMessage('');
-  };
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    try {
+      // IMPORTANT: Replace "YOUR_FORM_ID" with your actual Formspree form ID.
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(values)
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <section id="contact">
@@ -42,47 +87,49 @@ const Contact = () => {
 
       <div className="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto">
         <div className="md:w-1/2 order-2 md:order-1">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="sr-only">Name</label>
-              <Input
-                id="name"
-                type="text"
-                placeholder="Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="bg-background/50"
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Your Name" {...field} className="bg-background/50" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div>
-              <label htmlFor="email" className="sr-only">Email</label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-background/50"
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input type="email" placeholder="Your Email" {...field} className="bg-background/50" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div>
-              <label htmlFor="message" className="sr-only">Message</label>
-              <Textarea
-                id="message"
-                placeholder="Your Message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-                className="bg-background/50"
-                rows={5}
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Textarea placeholder="Your Message" {...field} className="bg-background/50" rows={5} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <Button type="submit" className="w-full group">
-              Send Message <Send className="ml-2 h-4 w-4 group-hover:animate-glitch" />
-            </Button>
-          </form>
+              <Button type="submit" className="w-full group" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'} <Send className="ml-2 h-4 w-4 group-hover:animate-glitch" />
+              </Button>
+            </form>
+          </Form>
         </div>
         <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start order-1 md:order-2">
            <div className="flex flex-col items-start justify-center gap-6">
