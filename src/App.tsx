@@ -10,6 +10,9 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 function App() {
+  console.log('App component loaded');
+  console.log('Current URL:', window.location.href);
+  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -18,6 +21,12 @@ function App() {
         <HashRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/home" element={<Index />} />
+            <Route path="/about" element={<Index />} />
+            <Route path="/skills" element={<Index />} />
+            <Route path="/projects" element={<Index />} />
+            <Route path="/experience" element={<Index />} />
+            <Route path="/contact" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

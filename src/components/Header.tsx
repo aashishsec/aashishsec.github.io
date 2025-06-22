@@ -19,10 +19,21 @@ const Header = () => {
     e.preventDefault();
     setIsOpen(false);
     
+    console.log('Navigation clicked:', href);
+    
+    // Ensure we're on the home page first
+    if (window.location.pathname !== '/' && window.location.hash !== '#/') {
+      window.location.href = '/' + href;
+      return;
+    }
+    
     // Scroll to the section
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      console.log('Scrolled to section:', href);
+    } else {
+      console.warn('Section not found:', href);
     }
     
     // Update URL hash without triggering navigation
