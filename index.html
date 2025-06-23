@@ -1,49 +1,299 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aashish Bande – Security Analyst & Tech Alchemist</title>
-    <meta name="description" content="Portfolio of Aashish Bande, Security Analyst with a passion for hacking‑themed, sleek web experiences." />
-    <meta name="author" content="Aashish Bande" />
-    <meta name="keywords" content="security analyst, cybersecurity, ethical hacking, penetration testing, portfolio" />
-
-    <meta property="og:title" content="Aashish Bande – Security Analyst & Tech Alchemist" />
-    <meta property="og:description" content="Portfolio of Aashish Bande, Security Analyst with a passion for hacking‑themed, sleek web experiences." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://aashishsec.github.io/" />
-    <meta property="og:image" content="https://aashishsec.github.io/og-image.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aashish Bande – Security Analyst & Tech Alchemist" />
-    <meta name="twitter:description" content="Portfolio of Aashish Bande, Security Analyst with a passion for hacking‑themed, sleek web experiences." />
-    <meta name="twitter:image" content="https://aashishsec.github.io/og-image.png" />
+    <meta name="description" content="Portfolio of Aashish Bande, Security Analyst with a passion for hacking‑themed, sleek web experiences.">
+    <meta name="author" content="Aashish Bande">
+    <meta name="keywords" content="security analyst, cybersecurity, ethical hacking, penetration testing, portfolio">
+    
+    <meta property="og:title" content="Aashish Bande – Security Analyst & Tech Alchemist">
+    <meta property="og:description" content="Portfolio of Aashish Bande, Security Analyst with a passion for hacking‑themed, sleek web experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aashishsec.github.io/">
+    <meta property="og:image" content="https://aashishsec.github.io/og-image.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aashish Bande – Security Analyst & Tech Alchemist">
+    <meta name="twitter:description" content="Portfolio of Aashish Bande, Security Analyst with a passion for hacking‑themed, sleek web experiences.">
+    <meta name="twitter:image" content="https://aashishsec.github.io/og-image.png">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
-    <link rel="canonical" href="https://aashishsec.github.io/" />
+    <link rel="canonical" href="https://aashishsec.github.io/">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- GitHub Pages SPA handling -->
-    <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
-  </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#home" class="logo">AASHISH BANDE<span class="caret">_</span></a>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#home" onclick="closeMobileMenu()">Home</a>
+            <a href="#about" onclick="closeMobileMenu()">About</a>
+            <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+            <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+            <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+        </div>
+    </header>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <span id="typewriter">Hello, I'm Aashish Bande</span>
+                <span class="caret">|</span>
+            </h1>
+            <h2 class="hero-subtitle">Security Analyst | Tech Alchemist | Cybersecurity Explorer</h2>
+            <p class="hero-quote">"Transforming Challenges into Solutions"</p>
+            <div class="hero-buttons">
+                <a href="/Aashish_Bande_Resume.pdf" download class="btn btn-primary">
+                    Download Resume 📥
+                </a>
+                <a href="https://www.linkedin.com/in/aashishsec" target="_blank" class="btn btn-secondary">
+                    LinkedIn 💼
+                </a>
+                <a href="https://github.com/aashishsec" target="_blank" class="btn btn-secondary">
+                    GitHub 🐙
+                </a>
+                <a href="https://aashishsec.medium.com/" target="_blank" class="btn btn-secondary">
+                    Medium 📝
+                </a>
+                <a href="https://www.aashishsec.in/" target="_blank" class="btn btn-secondary">
+                    Services 💼
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <h3 class="section-title">$ about-me</h3>
+                    <p class="about-text">
+                        <span id="aboutTypewriter">I'm a dynamic cybersecurity professional with a B.Tech in Mechanical Engineering and 1+ year as a Security Analyst at Pragma Edge Inc. Skilled in vulnerability assessments, penetration testing, SAST, and incident response. Fueled by a passion for AI, blockchain, cloud, and crypto.</span>
+                        <span class="caret">|</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h3 class="section-title">Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>💻 Languages</h4>
+                    <p>Python, Java, JavaScript, HTML5, CSS</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🛡️ Security</h4>
+                    <p>OSINT, Web & Network Penetration Testing, SAST, IDS/IPS</p>
+                </div>
+                <div class="skill-card">
+                    <h4>☁️ Cloud</h4>
+                    <p>AWS</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🔧 Tools</h4>
+                    <p>Kali Linux, Burp Suite, Metasploit</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🏆 Certifications</h4>
+                    <p>CAP, CNSP, ISO 27001 Master's, Jr. Pen Tester, API Pen Testing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h3 class="section-title">Projects & Research</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>GhostRecon</h4>
+                    <p>A passive reconnaissance tool for discovering domains and subdomains for a target.</p>
+                    <div class="tech-tags">
+                        <span>Reconnaissance</span>
+                        <span>Domain Discovery</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aashishsec/GhostRecon" target="_blank">View Code 🐙</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4>My-dorks</h4>
+                    <p>Generates Google, Shodan, and GitHub dorks for bug bounty hunting.</p>
+                    <div class="tech-tags">
+                        <span>Google Dorks</span>
+                        <span>Shodan</span>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://aashishsec.github.io/docks/" target="_blank">Live Demo 🌐</a>
+                        <a href="https://github.com/aashishsec/docks" target="_blank">View Code 🐙</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4>HttpAlive</h4>
+                    <p>A web probing tool to discover alive subdomains and URLs with concurrency options.</p>
+                    <div class="tech-tags">
+                        <span>Web Probing</span>
+                        <span>Subdomain Discovery</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://aashishsec.github.io/httpAlive/" target="_blank">Live Demo 🌐</a>
+                        <a href="https://github.com/aashishsec/httpAlive" target="_blank">View Code 🐙</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4>HackHive</h4>
+                    <p>A Docker environment for bug bounties, pre-loaded with essential tools.</p>
+                    <div class="tech-tags">
+                        <span>Docker</span>
+                        <span>Bug Bounty</span>
+                        <span>Tooling</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://aashishsec.github.io/HackHive/" target="_blank">Live Demo 🌐</a>
+                        <a href="https://github.com/aashishsec/HackHive" target="_blank">View Code 🐙</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4>BBTools Installer</h4>
+                    <p>A simple installer script for various bug bounty tools to set up your environment quickly.</p>
+                    <div class="tech-tags">
+                        <span>Shell Scripting</span>
+                        <span>Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://aashishsec.github.io/BBTools/" target="_blank">Live Demo 🌐</a>
+                        <a href="https://github.com/aashishsec/BBTools" target="_blank">View Code 🐙</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4>SubDominator</h4>
+                    <p>Efficiently discover subdomains for a target domain with minimal impact.</p>
+                    <div class="tech-tags">
+                        <span>Subdomain Discovery</span>
+                        <span>Bug Bounty</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aashishsec/Subdominator" target="_blank">View Code 🐙</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h3 class="section-title">Experience</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Aug 2024–Present</span>
+                        <h4>Security Analyst</h4>
+                        <p>Pragma Edge Inc</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">May 2023–Aug 2023</span>
+                        <h4>Cybersecurity Intern</h4>
+                        <p>Safe Your Web</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jan 2023–Mar 2023</span>
+                        <h4>Administrator</h4>
+                        <p>Virtually Testing Foundation</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022</span>
+                        <h4>G.E.Trainee & Forensics Intern</h4>
+                        <p>LTIMindtree & Cyber Secured India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h3 class="section-title">Get In Touch</h3>
+            <p class="contact-intro">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out using the form below.</p>
+            
+            <div class="contact-content">
+                <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message 📤</button>
+                </form>
+                
+                <div class="contact-info">
+                    <a href="https://www.linkedin.com/in/aashishsec" target="_blank" class="contact-item">
+                        💼 linkedin.com/in/aashishsec
+                    </a>
+                    <a href="https://github.com/aashishsec" target="_blank" class="contact-item">
+                        🐙 github.com/aashishsec
+                    </a>
+                    <a href="https://aashishsec.medium.com/" target="_blank" class="contact-item">
+                        📝 aashishsec.medium.com
+                    </a>
+                    <div class="contact-item">
+                        📍 Hyderabad, Telangana, India
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Aashish Bande. All rights reserved.</p>
+            <p>STATUS: <span class="status-online">OPERATIONAL</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
